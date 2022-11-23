@@ -1,0 +1,44 @@
+.table{
+    border: 1px solid gray;
+    // width: 100%;
+    border-collapse: collapse;
+    
+
+    tr{
+        th, td{
+            border: 1px solid gray;
+            text-align: left;
+            padding: 5px;
+            color: gray;
+
+            .icon{
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            .delete{
+                color: red;
+            }
+            .edit{
+                color: blue;
+            }
+        }
+        .unpaid{
+            padding: 5px;
+            font-weight: bold;
+            background-color: rgba(255, 0, 0, 0.3);
+            color: red;
+        }
+        .paid{
+            padding: 5px;
+            font-weight: bold;
+            background-color: rgba(0, 255, 0, 0.3);
+            color: rgb(0, 255, 0);
+        }
+        .pending{
+            padding: 5px;
+            font-weight: bold;
+            background-color: rgba(218, 165, 32, 0.3);
+            color: goldenrod;
+        }
+    }
+}

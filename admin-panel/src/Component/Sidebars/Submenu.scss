@@ -1,0 +1,33 @@
+.sidebarItems{
+    margin: 30px 0;
+
+    .link{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        color: lightgray;
+        font-weight: bold;
+
+        .icon{
+            font-size: 18px;
+            margin-right: 10px;
+            color: lightgray;
+        }
+    }
+
+    .subLink{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: lightgray;
+        margin: 10px 0;
+        padding-left: 10px;
+        font-size: 14px;
+        .icon{
+            font-size: 16px;
+            margin-right: 5px;
+            color: lightgray;
+        }
+    }
+}

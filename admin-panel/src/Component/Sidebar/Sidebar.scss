@@ -1,0 +1,28 @@
+.sidebar{
+    flex: 1;
+    border-right: 0.5px solid #00003450;
+    min-height: 100vh;
+    background-color: rgb(56, 56, 56);
+
+    .top{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo{
+            font-size: 20px;
+            font-weight: bold;
+            color: lightgray;
+        }
+    }
+
+    hr{
+        border: 1px solid lightgray;
+    }
+
+    .center{
+        padding-left: 10px;
+
+    }
+}

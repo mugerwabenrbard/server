@@ -1,0 +1,25 @@
+.datatable{
+    display: flex;
+
+    .datatableContainer{
+        flex: 5;
+        // padding:0 20px;
+
+        .datatableTable{
+            padding: 20px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.5);
+            box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.5);
+            border-radius: 5px;
+            margin: 20px;
+            .title{
+                font-size: 24px;
+                font-weight: bold;
+                color: gray;
+                text-align: center;
+                margin: 10px;
+    
+            }
+
+        }
+    }
+}

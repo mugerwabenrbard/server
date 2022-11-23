@@ -1,0 +1,24 @@
+.departmentList{
+    display: flex;
+
+    .departmentListContainer{
+        flex: 5;
+
+        .tablez{
+            padding: 10px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.5);
+            box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.5);
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+
+            .title{
+                font-weight: bold;
+                text-align: center;
+                font-size: 24px;
+                color: gray;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

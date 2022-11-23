@@ -1,0 +1,104 @@
+.pharmacy{
+    display: flex;
+
+    .pharmacyContainer{
+        flex: 5;
+
+        .pharmacyList{
+            margin: 10px;
+            padding: 20px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.5);
+            box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.5);
+            border-radius: 5px;
+
+            .title{
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+                color: gray;
+            }
+        }
+    }
+}
+
+.addMedicine{
+    display: flex;
+
+    .addMedicineContainer{
+        flex: 5;
+
+        .addMedicineForm{
+            margin: 10px;
+            padding: 20px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.5);
+            box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.5);
+            border-radius: 5px;
+
+            .title{
+                font-weight: bold;
+                text-align: center;
+                font-size: 24px;
+                color: gray;
+                margin-bottom: 20px;
+            }
+
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                gap: 10px;
+
+                .formInput{
+                    display: flex;
+                    flex-direction: column;
+                    width: 40%;
+                    label{
+                        color: gray;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    input{
+                        width: 100%;
+                        padding: 5px;
+                        font-size: 18px;
+                        border-radius: 5px;
+                        outline: none;
+                        border: 1px solid gray;
+                        color: gray;
+                    }
+                    select{
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-size: 18px;
+                        border: 1px solid gray;
+                        outline: none;
+                        color: gray;
+                        option{
+                            font-size: 18px;
+                            color: gray;
+                        }
+                    }
+                }
+                .btn{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 20px;
+                    button{
+                        padding:10px 30px;
+                        font-weight: bold;
+                        font-size: 18px;
+                        background-color: green;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

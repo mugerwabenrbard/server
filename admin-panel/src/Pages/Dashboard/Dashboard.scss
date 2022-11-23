@@ -1,0 +1,58 @@
+.dashboard{
+    display: flex;
+
+    .dashboardContainer{
+        flex: 5;
+
+        .widgets{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+
+            .widget{
+                -webkit-box-shadow: 5px 6px 18px -6px lightgray; 
+                box-shadow: 5px 6px 18px -6px lightgray;
+                border: 1px solid lightgray;
+                padding: 10px;
+                width: 200px;
+
+                .title, .percent{
+                    font-size: 14px;
+                    // font-weight: bold;
+                    color: rgb(185, 185, 185);
+                    display: flex;
+                    align-items: center;
+                    // justify-content: start;
+                }
+
+                .chart{
+                    margin: 10px 0;
+                }
+
+                .count{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: gray;
+                    display: flex;
+                    align-items: center;
+                    // justify-content: start;
+                }
+            }
+        }
+        .recents{
+            margin:20px;
+            -webkit-box-shadow: 5px 6px 18px -6px lightgray; 
+            box-shadow: 5px 6px 18px -6px lightgray;
+            border: 1px solid lightgray;
+            padding: 20px;
+            .tableTitle{
+                font-size: 24px;
+                font-weight: bold;
+                color: gray;
+                text-align: center;
+                margin: 10px;
+            }
+        }
+    }
+}
