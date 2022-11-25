@@ -5,8 +5,26 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Chart from '../../Component/Chart/Chart';
 import Table from '../../Component/Table/Table';
+import { useEffect } from 'react';
+import jwt from 'jsonwebtoken';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+    const navigate = useNavigate()
+    // Check For User Token
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
+
+    //     if (token) {
+    //         const user = jwt.decode(token)
+    //         console.log(user)
+    //         if (!user) {
+    //             localStorage.removeItem(token)
+    //             navigate('/')
+    //         }
+    //     }
+    // }, [])
+    
   return (
     <div className='dashboard'>
         <Sidebar/>

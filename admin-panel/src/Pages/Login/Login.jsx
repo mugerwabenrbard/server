@@ -13,10 +13,10 @@ const Login = () => {
     const loginUser = (e) =>{
         e.preventDefault()
         const user = {username, department, password}
-      // console.log(user)
         axios.post('http://localhost:5000/api/user/login', user).then((res)=>{
             const data = res.data
             if (data.message === "User Logged in Successfully") {
+              // localStorage.setItem('token', data.token)
               navigate('/dashboard')
             }else(
               alert(data.message)
