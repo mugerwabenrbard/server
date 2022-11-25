@@ -1,27 +1,48 @@
 import { useState } from 'react'
 import './Login.scss'
-import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import {useSelector, useDispatch} from 'react-redux'
+import {toast} from 'react-toastify'
+import { register, reset } from '../../features/auth/authSlice'
+import { useEffect } from 'react'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Register = () => {
     const [username, setUsername] = useState('')
     const [department, setDepartment] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {user, isLoading, isError, isSuccess, message} = useSelector((state)=>state.auth)
+
+    useEffect(()=>{
+      if (isError) {
+        toast.error('User Saving Failed')
+      }
+
+      if (isSuccess || user) {
+        navigate('/dashboard')
+      }
+
+      dispatch(reset)
+
+    },[user, isError, isSuccess, message,navigate,dispatch])
 
     const registerUser = (e) =>{
         e.preventDefault()
-        const user = {username, department, password}
+        const userData = {username, department, password}
 
-        axios.post('http://localhost:5000/api/user/register', user).then((res)=>{
-            const data = res.data
-            if (data.message === "User Saved Successfully") {
-                alert(data.message)
-                navigate('/dashboard')
-            }else{
-                alert(data.message)
-            }
-        }).catch(err=>console.log(err))
+        dispatch(register(userData))
+
+    }
+
+    if (isLoading) {
+      return  
+        <Backdrop open>
+          <CircularProgress color="inherit" />
+        </Backdrop>
     }
     return (
         <div className='login' style={{backgroundImage: "url(/images/background.jpg)"}}>

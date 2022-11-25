@@ -29,7 +29,8 @@ router.post('/register', async(req,res)=>{
             })
 
             if (user) {
-                res.json({message: "User Saved Successfully", data:user})
+                const id = {id:user._id, department:user.department}
+                res.json({message: 'User Logged in Successfully', data: user, token:generateToken(id)})
             }else{
                 res.json({message: "User Did Not Save"})
             }
@@ -45,7 +46,8 @@ router.post('/login', async(req,res)=>{
         res.json({message: 'User Log in Failed'})
     }else{
         if (user && department === user.department && (await bcrypt.compare(password, user.password))) {
-            res.send({message: 'User Logged in Successfully', data: user, token:generateToken(user._id)})
+            const id = {id:user._id, department:user.department}
+            res.send({message: 'User Logged in Successfully', data: user, token:generateToken(id)})
         }else{
             res.json({message: 'User Log in Failed'})
         }
@@ -53,13 +55,13 @@ router.post('/login', async(req,res)=>{
 })
 
 router.get('/get-user', protect, async(req,res)=>{
-    const{_id, username} = await User.findById(req.user.id)
-    res.status(200).json({message: 'USer data display', username, id:_id})
+    const{_id, username, department} = await User.findById(req.user.id)
+    res.status(200).json({message: 'USer data display', username, id:_id,department})
 })
 
 // Generate JWT Token
 const generateToken = (id)=>{
-    return jwt.sign({id}, process.env.JWT_SECRET,{expiresIn:'1d'})
+    return jwt.sign({id}, 'abc123',{expiresIn:'1h'})
 }
 
 module.exports = router
